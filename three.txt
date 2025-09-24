@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #efeeec;
+      color: #111212;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1384px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.07;
+      letter-spacing: -0.037em;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.95rem);
+      font-weight: 500;
+      line-height: 1.06;
+      letter-spacing: -0.037em;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.375rem);
+      font-weight: 500;
+      line-height: 1.09;
+      letter-spacing: -0.037em;
+    }
+
+    h4 {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: -0.037em;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8125rem 1.5625rem;
+      background: #ffffff;
+      border: none;
+      border-radius: 2rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: -0.027em;
+      text-decoration: none;
+      color: #111212;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+
+    .btn:focus {
+      outline: 2px solid #b2f6e3;
+      outline-offset: 2px;
+    }
+
+    .btn-icon {
+      width: 9px;
+      height: 13px;
+      transform: scaleY(-1);
+    }
+
+    @keyframes progress-expand {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .creating-demand {
+      padding: 6rem 0;
+    }
+
+    .creating-demand-content {
+      display: flex;
+      flex-direction: row;
+      gap: 6rem;
+      align-items: flex-start;
+    }
+
+    .demand-text {
+      flex: 1;
+      max-width: 652px;
+      width: 100%;
+    }
+
+    .demand-header {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #bebebe;
+      margin-bottom: 2rem;
+    }
+
+    .demand-subtitle {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      border-top: 1px solid #bebebe;
+    }
+
+    .accordion-item {
+      position: relative;
+      border-bottom: 1px solid #bebebe;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-item.active {
+      border-color: #111212;
+      border-width: 2px;
+    }
+
+    .accordion-item.active::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #111212;
+      animation: progress-expand 0.5s ease-in-out;
+    }
+
+    .accordion-header {
+      padding: 1.5rem 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .accordion-header:focus {
+      outline: 2px solid #b2f6e3;
+      outline-offset: 2px;
+    }
+
+    .accordion-title {
+      font-size: 1.3125rem;
+      font-weight: 500;
+      letter-spacing: -0.037em;
+      color: #111212;
+    }
+
+    .accordion-icon {
+      font-size: 1.5rem;
+      font-weight: normal;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 500px;
+    }
+
+    .accordion-body {
+      padding: 0 0 1.5rem 0;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease 0.1s;
+    }
+
+    .accordion-item.active .accordion-body {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .demand-image {
+      flex: 1;
+      max-width: 652px;
+      width: 100%;
+    }
+
+    .demand-image-container {
+      border-radius: 2rem;
+      overflow: hidden;
+      height: 652px;
+      position: sticky;
+      top: 0;
+    }
+
+    .demand-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background: #f0f0f0;
+      transition: background-image 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- same accordion HTML & JS as before -->
+</body>
+</html>

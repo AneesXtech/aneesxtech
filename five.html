@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise at Seven - Digital Marketing Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles - Matching your existing design system */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #efeeec;
+            color: #111212;
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+        
+        /* Typography - Matching your existing components */
+        h1 {
+            font-size: clamp(28px, 5vw, 56px);
+            font-weight: 500;
+            line-height: 1.07;
+            letter-spacing: -0.037em;
+        }
+        
+        h2 {
+            font-size: 47px;
+            font-weight: 500;
+            line-height: 1.06;
+            letter-spacing: -0.037em;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.09;
+            letter-spacing: -0.037em;
+        }
+        
+        h4 {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.037em;
+        }
+        
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Container - Matching your existing max-width */
+        .container {
+            max-width: 1384px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        
+        /* Buttons - Matching your existing button styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 25px;
+            background: #ffffff;
+            border: none;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.027em;
+            text-decoration: none;
+            color: #111212;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        /* Animations - From your existing CSS */
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        
+        @keyframes slide {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-50%); }
+        }
+        
+        /* Tech Section - Based on your ChannelsSection */
+        .tech-section {
+            width: 100%;
+            overflow: hidden;
+            padding: 48px 0;
+        }
+        
+        .tech-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .tech-title {
+            flex-shrink: 0;
+            width: 138px;
+        }
+        
+        .tech-title h4 {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.35;
+            letter-spacing: -0.038em;
+        }
+        
+        .tech-scroll {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-track {
+            display: flex;
+            gap: 0;
+            animation: scroll 20s linear infinite;
+        }
+        
+        .tech-item {
+            flex-shrink: 0;
+            width: 230px;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        .tech-logo {
+            width: 96px;
+            height: 43px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .tech-gradient-left,
+        .tech-gradient-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 160px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .tech-gradient-left {
+            left: 0;
+            background: linear-gradient(to right, #efeeec, transparent);
+        }
+        
+        .tech-gradient-right {
+            right: 0;
+            background: linear-gradient(to left, #efeeec, transparent);
+        }
+        
+        /* Projects Section - Based on your ServicesSection */
+        .projects-section {
+            padding: 48px 0;
+            overflow: hidden;
+        }
+        
+        .projects-scroll {
+            overflow: hidden;
+        }
+        
+        .projects-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .project-card {
+            flex-shrink: 0;
+            width: 432px;
+            padding: 0 10px;
+        }
+        
+        .project-card-inner {
+            background: #ffffff;
+            border-radius: 24px;
+            height: 432px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .project-title {
+            padding: 8px 16px;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 1.07;
+            letter-spacing: -0.037em;
+            white-space: pre-line;
+        }
+        
+        .projects-cta {
+            text-align: center;
+            margin-top: 28px;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 96px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 80px;
+            align-items: flex-start;
+        }
+        
+        .about-text {
+            flex: 1;
+            max-width: 652px;
+        }
+        
+        .about-header {
+            padding-bottom: 16px;
+            border-bottom: 1px solid #bebebe;
+            margin-bottom: 24px;
+        }
+        
+        .about-subtitle {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        
+        .about-text p {
+            margin-bottom: 16px;
+        }
+        
+        .about-image {
+            flex: 1;
+            max-width: 652px;
+        }
+        
+        .about-image-container {
+            border-radius: 24px;
+            overflow: hidden;
+            height: 500px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Why Choose Section */
+        .why-choose-section {
+            padding: 96px 0;
+        }
+        
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .feature-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        
+        @media (max-width: 375px) {
+            .project-card {
+                width: 280px;
+            }
+            
+            .about-image-container {
+                height: 300px;
+            }
+            
+            .testimonials-title h2 {
+                font-size: 36px;
+            }
+        }
+        
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .tech-track,
+            .projects-track {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tech Section Start -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="tech-content">
+                <div class="tech-title">
+                    <h4>Channels we<br>drive demand<br>& discovery on</h4>
+                </div>
+                <div class="tech-scroll">
+                    <div class="tech-track">
+                        <!-- First set -->
+                        <div class="tech-item">
+                            <div class="tech-logo">Google</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">YouTube</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">TikTok</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">LinkedIn</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">Meta</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">X</div>
+                        </div>
+                        <!-- Duplicate set for seamless scroll -->
+                        <div class="tech-item">
+                            <div class="tech-logo">Google</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">YouTube</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">TikTok</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">LinkedIn</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">Meta</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-logo">X</div>
+                        </div>
+                    </div>
+                    <div class="tech-gradient-left"></div>
+                    <div class="tech-gradient-right"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tech Section End -->
+
+    <!-- Projects Section Start -->
+    <section class="projects-section">
+        <div class="projects-scroll">
+            <div class="projects-track">
+                <!-- First set -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Keyword Universe Project</div>
+                        <div class="project-title">Keyword Universe<br>& Search Journeys</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Content Strategy Project</div>
+                        <div class="project-title">Content Strategy</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Creative Positioning Project</div>
+                        <div class="project-title">🧠 Creative Positioning &<br>Brand Strategy Playbooks</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">LLM/AIO/GEO Project</div>
+                        <div class="project-title">LLM/AIO/GEO<br>Audits & Strategy</div>
+                    </div>
+                </div>
+                <!-- Duplicate set -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Keyword Universe Project</div>
+                        <div class="project-title">Keyword Universe<br>& Search Journeys</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Content Strategy Project</div>
+                        <div class="project-title">Content Strategy</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">Creative Positioning Project</div>
+                        <div class="project-title">🧠 Creative Positioning &<br>Brand Strategy Playbooks</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-image">LLM/AIO/GEO Project</div>
+                        <div class="project-title">LLM/AIO/GEO<br>Audits & Strategy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projects-cta">
+            <div class="container">
+                <a href="#contact" class="btn">
+                    Enquire to speak to a strategist
+                    <svg width="9" height="13" viewBox="0 0 9 13" fill="none">
+                        <path d="M7.35437 10.1548H7.8925V9.61664V4.23539V3.69727H6.81625V4.23539V8.31617L1.81617 3.31609L1.435 2.93492L0.672656 3.69727L1.05383 4.07844L6.05391 9.07852H1.97313H1.435V10.1548H1.97313H7.35437Z" fill="#111212"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- About Me Section Start -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-header">
+                        <div class="about-subtitle">About Me</div>
+                        <h2>We engineer growth</h2>
+                    </div>
+                    
+                    <p>Similarly to the way we run our onsite SEO, we break it down into what we are defending, growing and innovating to drive growth within the business.</p>
+                    
+                    <p>Every brand sits at a different stage in the journey, and we meet you where you are. Our approach is rooted in three core strategic pillars:</p>
+                    
+                    <p>I'm a digital marketing strategist specializing in audience-first organic media planning. With years of experience building category leaders, I help brands create demand at the top of the funnel and capture it across all relevant touchpoints.</p>
+                    
+                    <p>My approach combines data-driven insights with creative strategy to drive real growth. I work with platforms in real-time, identifying new opportunities and adapting to the ever-changing digital landscape.</p>
+                </div>
+                
+                <div class="about-image">
+                    <div class="about-image-container">
+                        Professional Photo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Me Section End -->
+
+    <!-- Why Choose Me Section Start -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-header">
+                <h2>Why Choose Me</h2>
+                <p style="margin-top: 16px; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">I deliver results through strategic thinking, creative execution, and data-driven optimization that drives real growth.</p>
+            </div>
+            
+            <div class="why-choose-grid">
+                <div class="feature-card">
+                    <h3>🛡️ Defend</h3>
+                    <p>We reinforce what's already working and make it work harder for you. Whether that's repurposing what's on-site to off-site, better optimising your current categories and guides, or supporting current PR activity to drive organic growth rather than being a standalone awareness channel.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📈 Grow</h3>
+                    <p>We then identify opportunities to scale. Whether it's expanding into new channels, new categories or subcategories, audiences, or formats, we map out the smartest paths to growth, with strategies built around demand, data, and market potential.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🚀 Innovate</h3>
+                    <p>We push you into the future. From AI search readiness to trend-driven campaigns, we create space for big ideas-breaking category conventions and making your brand unmissable in the moments that matter. Innovation isn't a risk. It's a requirement for category leaders.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📊 Data-Driven Results</h3>
+                    <p>All decisions are backed by comprehensive analysis and real-time performance monitoring to ensure optimal outcomes and measurable growth.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔄 Agile Execution</h3>
+                    <p>Quick adaptation to market changes and platform updates ensures your campaigns remain effective and relevant in the fast-moving digital landscape.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>💡 Creative Solutions</h3>
+                    <p>Break through the noise with innovative campaigns that capture attention and drive meaningful engagement across all touchpoints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Me Section End -->
+
+  
+
+    <script>
+      
+        
+        // Pause animations on reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.tech-track, .projects-track').forEach(track => {
+                track.style.animationPlayState = 'paused';
+            });
+        }
+        
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.target.classList.contains('tab-btn')) {
+                    e.preventDefault();
+                    const tabIndex = parseInt(e.target.getAttribute('data-tab'));
+                    switchTab(tabIndex);
+                }
+            }
+        });
+        
+        // Auto-rotate testimonials
+        let currentTab = 2; // Start with GAME tab
+        setInterval(() => {
+            currentTab = (currentTab + 1) % 4;
+            switchTab(currentTab);
+        }, 8000);
+    </script>
+</body>
+</html>
