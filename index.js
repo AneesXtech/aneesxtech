@@ -357,3 +357,20 @@ gsap.fromTo(heading, {
 
 
   /// footer code end ////
+
+
+  /// switch dark and light mode code start ///
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+if (toggleBtn) {
+  // Apply saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+  toggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
