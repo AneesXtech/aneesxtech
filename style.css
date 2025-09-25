@@ -789,3 +789,92 @@
     .footer-bottom a:hover {
       color: #f5f5f5;
     }
+/* ===============================
+   CSS-ONLY THEME ADDON (no HTML/JS changes)
+   - Auto dark mode via prefers-color-scheme
+   - Accent variable
+   =============================== */
+
+/* Base tokens (light) */
+:root{
+  --bg:#ffffff;
+  --text:#111212;
+  --muted:#5a5a5a;
+  --surface:#f7f7f7;
+  --ring:#d7d7d7;
+
+  /* accent you can customize */
+  --accent:#00da90;
+  --accent-contrast:#0b0b0c;
+
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+/* Auto dark mode (no JS): follows OS preference */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0b0c;
+    --text:#f5f5f5;
+    --muted:#bdbdbd;
+    --surface:#141416;
+    --ring:#2a2a2d;
+    --accent-contrast:#0b0b0c;
+  }
+}
+
+/* Global apply */
+html, body{ background:var(--bg); color:var(--text); }
+
+/* Header */
+header.scrolled{
+  /* adaptive translucency instead of fixed white */
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+nav.desktop a, .cta{ color:var(--text); }
+nav.desktop a:hover, .cta:hover{ color:var(--accent); }
+.hamburger span{ background:var(--text); }
+
+/* Approach */
+.approach-subtitle{ color:var(--muted); }
+.approach-highlight{ background:var(--accent); color:var(--accent-contrast); }
+.approach-link-btn{
+  background:#fff; color:var(--text);
+  border:1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+}
+
+/* Accordion wrapper (keeps look, better contrast in dark) */
+.accordion-progress-wrapper{
+  background: color-mix(in oklab, var(--bg) 96%, #efeeec 4%);
+  color:var(--text);
+}
+.accordion-progress-line{ background:var(--text); }
+
+/* Services section (keeps dark block feel) */
+@media (prefers-color-scheme: dark){
+  .services-section{ background:#0f1012; }
+}
+
+/* Buttons */
+.btn{
+  background:var(--accent);
+  color:var(--accent-contrast);
+  border:1px solid color-mix(in oklab, var(--accent) 70%, transparent);
+}
+.btn:hover{ filter:brightness(.95); }
+.get-in-touch-btn-hij{ background:var(--accent); color:var(--accent-contrast); }
+
+/* Footer accents reuse accent color */
+.footer-heading{ color:var(--accent); }
+.footer-links a::after, .social-links a::after{ background:var(--accent); }
+.social-links a i{ color:var(--accent); }
+
+/* Accessibility */
+a:focus-visible, button:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
