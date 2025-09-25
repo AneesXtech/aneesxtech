@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anees Xtech - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <!-- GSAP Libraries -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
+</head>
+<body>
+  <!-- Header code start  -->
+  <header id="header">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#">
+        <img src="images/header-logo.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop">
+      <a href="#work">How we work</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#cases">Case studies</a>
+      <a href="#blog">Blog</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="#contact" class="cta">Get in touch</a>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <nav>
+      <a href="#work">How we work</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#cases">Case studies</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <a href="#contact" class="cta">Get in touch</a>
+  </div>
+
+<!-- // HEADER  code end // -->
+
+    <!-- Approach Section start -->
+  <section class="approach-section">
+    <div class="approach-wrapper">
+
+      <!-- Carousel -->
+      <div class="approach-carousel">
+        <div class="approach-carousel-container">
+          <div class="approach-carousel-slide" id="approach-slide"></div>
+
+          <div class="approach-carousel-controls">
+            <div class="approach-dots">
+              <div class="approach-dot active"></div>
+              <div class="approach-dot"></div>
+              <div class="approach-dot"></div>
+            </div>
+
+            <!-- Play/Pause Button -->
+            <button class="approach-btn" id="approachPlayPauseBtn" aria-label="Play/Pause">
+              <!-- Pause Icon -->
+              <svg id="approachPauseIcon" width="8" height="13" viewBox="0 0 8 13" fill="none">
+                <path d="M3 10.9297H0V1.92969H3V10.9297ZM7.5 10.9297H4.5V1.92969H7.5V10.9297Z" fill="#111212"/>
+              </svg>
+              <!-- Play Icon -->
+              <svg id="approachPlayIcon" width="10" height="13" viewBox="0 0 10 13" fill="none" style="display:none;">
+                <path d="M0 0L10 6.5L0 13V0Z" fill="#111212"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="approach-text">
+        <div class="approach-header">
+          <div class="approach-subtitle">Our unique approach</div>
+          <h2>We engineer growth</h2>
+        </div>
+        <p>Similarly to the way we run our <a href="#" class="approach-highlight">onsite SEO</a>, we break it down into what we are defending, growing and innovating to drive growth within the business.</p>
+        <p>Every brand sits at a different stage in the journey, and we meet you where you are. Our approach is rooted in three core strategic pillars:</p>
+        <div class="approach-pillars">
+          <div class="pillar">
+            <h4>🛡️ Defend</h4>
+            <p>We reinforce what's already working and make it work harder for you.</p>
+          </div>
+          <div class="pillar">
+            <h4>📈 Grow</h4>
+            <p>We then identify opportunities to scale.</p>
+          </div>
+          <div class="pillar">
+            <h4>🚀 Innovate</h4>
+            <p>We push you into the future.</p>
+          </div>
+        </div>
+        <a href="#" class="approach-link-btn">
+          Take a look at our work
+          <svg class="approach-link-icon" viewBox="0 0 9 13" fill="none">
+            <path d="M7.35437 10.1548H7.8925V9.61664V4.23539V3.69727H6.81625V4.23539V8.31617L1.81617 3.31609L1.435 2.93492L0.672656 3.69727L1.05383 4.07844L6.05391 9.07852H1.97313H1.435V10.1548H1.97313H7.35437Z" fill="#111212"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+      <!-- Approach Section end -->
+
+
+      <!-- service section start -->
+<!-- Services Section -->
+<div id="services-section" class="services-section">
+  <div class="services-content">
+
+    <!-- Title -->
+    <div class="services-title">
+      <h2>Our <br> Services</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="services-tabs">
+      <button class="tab-btn active" onclick="showService(0)">Web Development</button>
+      <button class="tab-btn" onclick="showService(1)">SEO Optimization</button>
+      <button class="tab-btn" onclick="showService(2)">Digital Marketing</button>
+      <button class="tab-btn" onclick="showService(3)">Brand Strategy</button>
+    </div>
+
+    <!-- Service 1 -->
+    <div class="service-item active">
+      <div class="card">
+        <div class="card-text">
+          <h2>Web Development</h2>
+          <blockquote>"Custom websites built for speed, security, and scalability to grow your business online."</blockquote>
+        </div>
+        <div class="card-image">
+          <a href="#" class="btn"><span>Learn More</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-item">
+      <div class="card">
+        <div class="card-text">
+          <h2>SEO Optimization</h2>
+          <blockquote>"Rank higher on search engines with proven strategies tailored to your niche."</blockquote>
+        </div>
+        <div class="card-image">
+          <a href="#" class="btn"><span>Learn More</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-item">
+      <div class="card">
+        <div class="card-text">
+          <h2>Digital Marketing</h2>
+          <blockquote>"Performance-driven ad campaigns that maximize ROI and increase brand visibility."</blockquote>
+        </div>
+        <div class="card-image">
+          <a href="#" class="btn"><span>Learn More</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-item">
+      <div class="card">
+        <div class="card-text">
+          <h2>Brand Strategy</h2>
+          <blockquote>"Crafting unique brand identities that connect with your audience and stand out."</blockquote>
+        </div>
+        <div class="card-image">
+          <a href="#" class="btn"><span>Learn More</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+       
+    <!-- /* /// according images changing section // */ -->
+
+<section class="accordion-progress-wrapper">
+  <div class="accordion-progress-container">
+    <div class="accordion-progress-section">
+      <div class="accordion-progress-flex">
+        <div class="accordion-progress-text">
+          <h2>Creating Demand and<br>Converting Customers</h2>
+          <div class="accordion-progress">
+            <div class="accordion-progress-item active" data-target="why-clients">
+              <button class="accordion-progress-header"><h4 class="accordion-progress-title">💬 Why Clients Come to Us</h4></button>
+              <div class="accordion-progress-content">
+                <div class="accordion-progress-body">
+                  <p>You've hit a plateau. Growth is slowing or declining...</p>
+                </div>
+              </div>
+              <div class="accordion-progress-line"></div>
+            </div>
+            <div class="accordion-progress-item" data-target="strategy-project">
+              <button class="accordion-progress-header"><h4 class="accordion-progress-title">🔥 Want some direction? Buy a strategy project from us</h4></button>
+              <div class="accordion-progress-content">
+                <div class="accordion-progress-body">
+                  <p>Our strategy projects are designed to give you clear direction...</p>
+                </div>
+              </div>
+              <div class="accordion-progress-line"></div>
+            </div>
+            <div class="accordion-progress-item" data-target="talk-strategy">
+              <button class="accordion-progress-header"><h4 class="accordion-progress-title">Let's talk strategy</h4></button>
+              <div class="accordion-progress-content">
+                <div class="accordion-progress-body">
+                  <p>Ready to transform your organic growth? Let's discuss how our strategic approach can help...</p>
+                </div>
+              </div>
+              <div class="accordion-progress-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-progress-image">
+          <div class="accordion-progress-image-container">
+            <div class="accordion-progress-bg" id="accordion-progress-bg"
+              style="background-image:url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?w=800');">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- /* /// according images changing section // */ -->
+
+<div class="scroll-section">
+    <div class="scroll-heading" id="animated-heading">Ready to Sky</div>
+  </div>
+
+    <!-- //// Testimonials section start /// -->
+<div class="root-container-xyz">
+    <div class="main-container-xyz">
+        <!-- Header Section -->
+        <div class="header-section-abc">
+            <div class="main-heading-def">
+                <div>Hear it from</div>
+                <div>those that <span class="know-highlight-ghi">know</span></div>
+            </div>
+            <div class="navigation-arrows-jkl">
+                <div class="nav-arrow-mno" onclick="slideTestimonials('prev')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </div>
+                <div class="nav-arrow-mno" onclick="slideTestimonials('next')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar-pqr">
+            <div class="clutch-section-stu">
+                <div class="clutch-logo-vwx"></div>
+                <div class="rating-section-yza">
+                    <div class="rating-number-bcd">5.0</div>
+                    <div class="verified-text-efg">Verified Rating</div>
+                </div>
+            </div>
+            <a href="https://calendly.com/d/cnm4-y25-jsm/link-building-call" class="get-in-touch-btn-hij">
+                Get in touch
+            </a>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials-section-klm">
+            <!-- Testimonial A -->
+            <div class="testimonial-card-nop testimonial-a">
+                <div class="stars-row-qrs">
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                </div>
+                <div class="testimonial-text-wxy">
+                    We have been working with them <span class="highlight-zab">for 2 years now, link building for over 25 different</span> clients. The quality of links is always amazing, communication is great and we've seen amazing results across every client.
+                </div>
+                <div class="user-info-cde">
+                    <div class="user-avatar-fgh" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=44&h=44&fit=crop&crop=face');"></div>
+                    <div class="user-details-ijk">
+                        <h4>Benji Hyam</h4>
+                        <p>Co-Founder - Grow & Convert</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial B -->
+            <div class="testimonial-card-nop testimonial-b">
+                <div class="stars-row-qrs">
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                </div>
+                <div class="testimonial-text-wxy">
+                    LinkBuilder took blogs with <span class="highlight-zab">zero inbound links</span>, gathered high-quality backlinks, and vaulted them to the top of Google search results. We've seen <span class="highlight-zab">impressive growth in consumer-intent keywords</span> and organic growth.
+                </div>
+                <div class="user-info-cde">
+                    <div class="user-avatar-fgh" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=44&h=44&fit=crop&crop=face');"></div>
+                    <div class="user-details-ijk">
+                        <h4>Brandon Monroe</h4>
+                        <p>SEO Manager - Cellucor.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial C -->
+            <div class="testimonial-card-nop testimonial-c">
+                <div class="stars-row-qrs">
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                    <div class="star-tuv"></div>
+                </div>
+                <div class="testimonial-text-wxy">
+                    Honestly, <span class="highlight-zab">the most professional</span>, best all around link building service I've used out of dozens. I've recommended several of my friends and they've just <span class="highlight-zab">crushed results with them too.</span>
+                </div>
+                <div class="user-info-cde">
+                    <div class="user-avatar-fgh" style="background-image: url('https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=44&h=44&fit=crop&crop=face');"></div>
+                    <div class="user-details-ijk">
+                        <h4>Bryce Welker</h4>
+                        <p>Founder - Crush Empire</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- /// testimonial code end /// -->
+
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
+
+</body>
+</html>

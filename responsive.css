@@ -1,0 +1,109 @@
+
+    /* MENU  Responsive */
+    @media (max-width: 768px) {
+      nav.desktop,
+      .cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* /// according images changing section // */
+      @media(max-width:1024px){
+      .accordion-progress-flex{flex-direction:column-reverse;gap:2rem;align-items:normal;}
+      .accordion-progress{padding-top:15px;}
+      .accordion-progress-image-container{position:relative;height:400px;}
+      .accordion-progress-title{font-size:20px;}
+      .accordion-progress-wrapper h2{font-size:2rem;}
+    }
+
+    @media(max-width:600px){
+      .accordion-progress-container{padding:0 1rem;}
+      .accordion-progress-image-container{height:350px;border-radius:11px;background-position:cover!important;}
+      .accordion-progress-header{padding:1rem 0;}
+      .accordion-progress-title{font-size:18px;}
+      .accordion-progress-wrapper h2{font-size:1.5rem;}
+    }
+    
+
+
+    /* ///// testimonial section code start /// */
+
+
+    /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            div.root-container-xyz {
+                padding: 0 40px;
+            }
+            
+            div.testimonials-section-klm {
+                flex-direction: row;
+                right: 0;
+            }
+            
+            div.testimonial-card-nop {
+                flex: 0 0 calc(50% - 20px);
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            div.root-container-xyz {
+                padding: 0 20px;
+            }
+            
+            div.header-section-abc {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            div.main-heading-def {
+                font-size: 32px;
+            }
+            
+            span.know-highlight-ghi {
+                font-size: 28px;
+            }
+            
+            div.bottom-bar-pqr {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            div.testimonials-section-klm {
+                flex-direction: row;
+            }
+            
+            div.testimonial-card-nop {
+                flex: 0 0 calc(100% - 20px);
+                width: calc(100% - 20px);
+            }
+        }
+ .gsap-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(18px);
+    will-change: transform, opacity;
+    white-space: pre; /* preserve spaces */
+  }
+        /* ///// testimonial section code end /// */
+
+
+          /* initial state for reveal elements */
+  .reveal-blur {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(40px);
+    will-change: transform, opacity, filter;
+    transition: none !important; /* GSAP will handle animation; fallback uses inline transition */
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-blur { transition: none !important; filter: none !important; transform: none !important; opacity: 1 !important; }
+  }
