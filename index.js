@@ -332,4 +332,28 @@ gsap.fromTo(heading, {
   },
 });
 
+//// footer code start ////
+ // Smooth underline animation with GSAP
+  document.querySelectorAll(".footer-links a, .social-links a").forEach(link => {
+    link.style.setProperty("--scale", 0);
 
+    link.addEventListener("mouseenter", () => {
+      gsap.to(link, { duration: 0.5, ease: "power3.out", "--scale": 1 });
+    });
+
+    link.addEventListener("mouseleave", () => {
+      gsap.to(link, { duration: 0.5, ease: "power3.inOut", "--scale": 0 });
+    });
+  });
+
+  // Accordion Toggle for Mobile
+  document.querySelectorAll(".footer-heading").forEach(heading => {
+    heading.addEventListener("click", () => {
+      const target = heading.nextElementSibling;
+      target.classList.toggle("open");
+      heading.classList.toggle("active");
+    });
+  });
+
+
+  /// footer code end ////

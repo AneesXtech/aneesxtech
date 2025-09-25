@@ -107,3 +107,61 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal-blur { transition: none !important; filter: none !important; transform: none !important; opacity: 1 !important; }
   }
+
+
+
+  
+    /* ---------- footer design Mobile Responsive ---------- */
+    @media (max-width: 768px) {
+      .footer-top {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      .footer-links,
+      .social-links {
+        flex-direction: column;
+        gap: 16px;
+        display: none; /* default hidden on mobile */
+      }
+
+      .footer-links.open,
+      .social-links.open {
+        display: flex;
+      }
+
+      .marquee-text {
+        font-size: 60px;
+        margin: 0 10px;
+        -webkit-text-stroke: 3px #fff;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .footer-heading {
+        display: flex; /* show accordion toggle only on mobile */
+        font-size: 18px;
+      }
+    }
+
+    /* ---------- Desktop Override ---------- */
+    @media (min-width: 769px) {
+      .footer-heading {
+        display: none !important; /* hide accordion toggle on desktop */
+      }
+
+      .footer-links,
+      .social-links {
+        display: flex !important; /* always show links on desktop */
+        flex-direction: row;
+      }
+
+      .footer-column {
+        border-bottom: none; /* remove bottom border for clean look */
+      }
+    }
