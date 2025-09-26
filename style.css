@@ -864,3 +864,114 @@ nav.desktop a:hover,
 :root[data-theme="dark"] .theme-toggle .sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .moon { display: inline; }
 
+
+
+
+
+/* /// CONTACT  FORM CODE //// */
+
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #fff; min-height: 100vh; }
+
+/* Container */
+#contact-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+/* Hero Section */
+#contact-hero {
+    flex: 1;
+    min-width: 400px;
+    margin: 20px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1758630737900-a28682c5aa69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#hero-title {
+    font-size: 54px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.1;
+}
+
+#hero-subtext { color: white; font-size: 19px; line-height: 1.4; margin-top: 20px; }
+
+#hero-careers-link { color: #fff; text-decoration: underline; }
+
+/* Form Section */
+#contact-form-section {
+    flex: 1;
+    padding: 40px;
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-form { width: 100%; max-width: 600px; }
+
+.form-row { display: flex; gap: 16px; margin-bottom: 16px; }
+.form-row .form-group { flex: 1; margin-bottom: 0; }
+
+label { display: block; font-size: 10.5px; margin-bottom: 4px; }
+.required { color: #e7000b; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 21px;
+    background-color: #f7f7f7;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    font-size: 12.5px;
+    outline: none;
+    transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus { border-color: #111212; }
+
+textarea { min-height: 128px; border-radius: 16px; resize: vertical; }
+
+/* Button */
+#submit-btn {
+    background-color: #111212;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 15px 30px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+#submit-btn:hover { background-color: #2a2a2a; }
+
+/* Success Message */
+#success-msg {
+    display: none;
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+

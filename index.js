@@ -374,3 +374,36 @@ if (toggleBtn) {
     localStorage.setItem('theme', next);
   });
 }
+
+
+
+/// contAnt form section code start ///
+
+document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = {};
+    for (let [key,value] of formData.entries()) data[key] = value;
+    console.log("Form submitted:", data);
+
+    // Show success message
+    const successMsg = document.getElementById('success-msg');
+    successMsg.style.display = 'block';
+
+    // Reset form after 3 seconds
+    setTimeout(()=>{
+        this.reset();
+        successMsg.style.display = 'none';
+    },3000);
+});
+
+// Focus & Blur effects
+const inputs = document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea');
+inputs.forEach(input=>{
+    input.addEventListener('focus', ()=> input.style.borderColor='#111212');
+    input.addEventListener('blur', ()=> input.style.borderColor='#e9e9e9');
+});
+
+
+
+        /// contAnt form section code end ///
