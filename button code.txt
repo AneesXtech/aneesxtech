@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Text Part */
+    .cta-text {
+      background: #C6FF3E;
+      color: #000;
+      padding: 10px 22px;
+      border-top-left-radius: 999px;
+      border-bottom-left-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
+    }
+
+    /* Icon Part */
+    .cta-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: #000;
+      color: #C6FF3E;
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover Effects */
+    .cta-btn:hover .cta-text {
+      background: #b2ff00;
+    }
+
+    .cta-btn:hover .cta-icon {
+      transform: translateX(6px) rotate(45deg);
+    }
+
+    /* SVG Icon */
+    .cta-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+	
+    .btn-wrapper {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+
+    button.custom-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #5680f9; /* yellow */
+      color: white;
+      font-family: var(--accent-font);
+      font-size: 16px;
+      font-weight: 400;
+      border: none;
+      border-radius: 999px;
+      padding: 5px 12px 5px 20px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-text {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-icon {
+      background: #5680f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: #000;
+      transition: transform 0.3s ease, fill 0.3s ease;
+    }
+
+    /* Hover effect */
+    button.custom-btn:hover .btn-text {
+      transform: translateX(-6px);
+    }
+
+    button.custom-btn:hover .btn-icon {
+      background: #000;
+      transform: translateX(6px) rotate(45deg);
+    }
+
+    button.custom-btn:hover .btn-icon svg {
+      fill: #5680f9;
+    }
+
+    </style>
+
+    <div class="btn-wrapper">
+                            <button class="custom-btn">
+                                <span class="btn-text">Start a project</span>
+                                <span class="btn-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path d="M328 96h24v288h-48V177.9L81 
+                 401l-17 17-33.9-34 17-17 
+                 223-223H64V96h264z" />
+                                    </svg>
+                                </span>
+                            </button>
+</body>
+</html>
