@@ -922,7 +922,6 @@ body { font-family: 'Poppins', sans-serif; background-color: #fff; min-height: 1
 #contact-form-section {
     flex: 1;
     padding: 40px;
-    min-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
